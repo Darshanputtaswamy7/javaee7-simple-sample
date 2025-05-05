@@ -38,7 +38,7 @@
         <snapshotRepository>
             <id>deployment</id>
             <name>Internal Snapshot Releases</name>
-            <url>http://172.31.45.214:8081/repository/Darshansnapshot/</url>
+            <url>http://13.200.254.146:8081/repository/Darshansnapshot/</url>
         </snapshotRepository>
     </distributionManagement>
     <build>
