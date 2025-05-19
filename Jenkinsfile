@@ -20,8 +20,7 @@ stages{
 stage('checkout'){
 steps{
 deleteDir()
-//git branch: "${params.BranchName}", url: 'https://github.com/Darshanputtaswamy7/maven-web-application.git'
-git branch: 'master', url: 'https://github.com/Darshanputtaswamy7/javaee7-simple-sample.git'
+git branch: 'QA', url: 'https://github.com/Darshanputtaswamy7/javaee7-simple-sample.git'
 }// steps
 }//stage
 
@@ -30,19 +29,17 @@ steps{
 parallel(
 startmessage: {SendSlackNotifications('STARTED')},
 clean: {sh 'mvn clean test'},
-package: {sh 'mvn clean package'},
-Print: {echo "${params.Name}"}
+package: {sh 'mvn clean package'}
 )//parallel
 }//steps
 }//stage
 
-/*
-/stage('build master'){
+stage('build QA'){
 steps{
-build job: 'master'
+build job: 'mbpl/master'
 }//steps
 }//stage
-*/
+
 
 }//stages
 
@@ -85,9 +82,3 @@ def SendSlackNotifications(String buildStatus = 'STARTED') {
   // Send notifications
   slackSend (color: colorCode, message: summary)
 }
-
-
-
-http://13.201.67.191:8080//multibranch-webhook-trigger/invoke?token=mytoken 
-
-
