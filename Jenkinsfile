@@ -37,7 +37,7 @@ package: {sh 'mvn clean package'}
 
 stage('build master'){
 steps{
-build job: 'mbpl/master'
+build job: 'mbpl/QA'
 }//steps
 }//stage
 
