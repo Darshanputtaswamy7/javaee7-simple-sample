@@ -15,18 +15,13 @@ triggers {
   githubPush()
 }
 
-parameters {
-  choice choices: ['development', 'QA', 'master'], description: 'branches', name: 'BranchName'
-  string defaultValue: 'darshan', description: 'names', name: 'Name'
-}
-
 stages{
 
 stage('checkout'){
 steps{
 deleteDir()
 //git branch: "${params.BranchName}", url: 'https://github.com/Darshanputtaswamy7/maven-web-application.git'
-git branch: "${params.BranchName}", url: 'https://github.com/Darshanputtaswamy7/javaee7-simple-sample.git'
+git branch: 'development', url: 'https://github.com/Darshanputtaswamy7/javaee7-simple-sample.git'
 }// steps
 }//stage
 
@@ -35,8 +30,7 @@ steps{
 parallel(
 startmessage: {SendSlackNotifications('STARTED')},
 clean: {sh 'mvn clean test'},
-package: {sh 'mvn clean package'},
-Print: {echo "${params.Name}"}
+package: {sh 'mvn clean package'}
 )//parallel
 }//steps
 }//stage
