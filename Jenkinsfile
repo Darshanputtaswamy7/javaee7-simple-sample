@@ -41,7 +41,7 @@ Print: {echo "${params.Name}"}
 }//steps
 }//stage
 
-/stage('build master'){
+stage('build master'){
 steps{
 build job: 'master'
 }//steps
