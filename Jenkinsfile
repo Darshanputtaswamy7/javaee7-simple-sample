@@ -85,9 +85,3 @@ def SendSlackNotifications(String buildStatus = 'STARTED') {
   // Send notifications
   slackSend (color: colorCode, message: summary)
 }
-
-
-
-http://13.201.67.191:8080//multibranch-webhook-trigger/invoke?token=mytoken 
-
-
