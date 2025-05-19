@@ -15,18 +15,13 @@ triggers {
   githubPush()
 }
 
-parameters {
-  choice choices: ['development', 'QA', 'master'], description: 'branches', name: 'BranchName'
-  string defaultValue: 'darshan', description: 'names', name: 'Name'
-}
-
 stages{
 
 stage('checkout'){
 steps{
 deleteDir()
 //git branch: "${params.BranchName}", url: 'https://github.com/Darshanputtaswamy7/maven-web-application.git'
-git branch: "${params.BranchName}", url: 'https://github.com/Darshanputtaswamy7/javaee7-simple-sample.git'
+git branch: 'master', url: 'https://github.com/Darshanputtaswamy7/javaee7-simple-sample.git'
 }// steps
 }//stage
 
