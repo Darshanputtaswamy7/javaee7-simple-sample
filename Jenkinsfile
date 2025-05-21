@@ -48,7 +48,6 @@ build job: 'master'
 
 post {
   success {
-deploy ( adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'd3ab157c-eb2c-4bc8-88be-6f67f701d378', path: '', url: 'http://13.203.215.183:8080/')], contextPath: null, war: '**/*.war' )
      SendSlackNotifications(currentBuild.result)  
     // One or more stepss need to be included within each condition's block.
   }//success
