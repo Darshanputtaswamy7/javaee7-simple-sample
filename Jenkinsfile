@@ -13,7 +13,7 @@ options {
 
 triggers {
   githubPush()
-}
+}//
 
 stages{
 
