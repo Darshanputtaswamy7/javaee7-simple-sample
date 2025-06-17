@@ -21,7 +21,7 @@ stages {
   stage('checkout') {
     steps {
 	       slackSend color: '#FFFF00', message: "${env.JOB_NAME} - Build #${env.BUILD_NUMBER} - STARTED: <${env.BUILD_URL}|(open)>"
-      git branch: "${master}", url: 'https://github.com/Darshanputtaswamy7/javaee7-simple-sample.git'
+      git branch: "${QA}", url: 'https://github.com/Darshanputtaswamy7/javaee7-simple-sample.git'
     }//steps
   }//stage
   
