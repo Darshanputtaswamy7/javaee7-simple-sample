@@ -2,6 +2,8 @@ pipeline {
 
 agent any
 
+	//hi
+
 tools {
   maven 'maven 3.9.10'
 }//tools
