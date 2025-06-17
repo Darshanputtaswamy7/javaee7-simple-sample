@@ -44,6 +44,7 @@ post {
   success {
      deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: '3f23cced-c9c8-4ac5-84b6-1e2efc9fed60', path: '', url: 'http://13.204.69.235:8080')], contextPath: null, onFailure: false, war: '**/*.war'
  slackSend color: '#00FF00', message: "${env.JOB_NAME} - Build #${env.BUILD_NUMBER} - ${currentBuild.currentResult}: <${env.BUILD_URL}|(open)> "
+	  
 	  build job: 'job mbpl/QA'
       }//success
 
